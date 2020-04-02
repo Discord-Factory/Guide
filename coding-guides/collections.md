@@ -10,26 +10,26 @@ A **Collection** is a _utility class_ that stores data. Collections are the Java
 
 Examples of Collections include:
 
-* `client.users`, `client.guilds`, `client.channels`
-* `guild.channels`, `guild.members`
+* `client.users.cache`, `client.guilds.cache`, `client.channels.cache`
+* `guild.channels.cache`, `guild.members.cache`
 * message logs \(in the callback of **`fetchMessages`**\)
-* `client.emojis`
+* `client.emojis.cache`
 
 ##  Getting by ID
 
  Very simply, to get anything by ID you can use `Collection.get(id)`. For instance, getting a channel can be 
 
-`client.channels.get("81385020756865024")`
+`client.channels.cache.get("81385020756865024")`
 
  Getting a user is also trivial: 
 
-`client.users.get("139412744439988224")`
+`client.users.cache.get("139412744439988224")`
 
 ##  Finding by key
 
 If you don't have the ID but only some other property, you may use `find()` to search by property:
 
-`let guild = client.guilds.find("name", "Logic Development");`
+`let guild = client.guilds.cache.find(g => g.name === "NextGen Team");`
 
 The `.find()` method also accepts a function. The _first_ result that returns `true` within the function, will be returned. The generic idea of this is:
 

@@ -40,9 +40,9 @@ module.exports = {
 
     token: "Your Bot Token",
 
-    Prefix = "/",
+    Prefix: "/",
 
-    owner = "Your ID of Discord"
+    owner: "Your ID of Discord"
 }
 ```
 
@@ -68,13 +68,13 @@ We are going to use the config variable that represents the configuration file, 
 Our bot line looks like this:
 
 ```javascript
-Client.login("Your Bot Token");
+client.login("Your Bot Token");
 ```
 
 and simply add the token variable
 
 ```javascript
-Client.login(token);
+client.login(token);
 ```
 
 Done, the other line we have to add is the prefix, we go to the line of our code and add the prefix by creating a new variable for the commands. After adding the prefix to the commands this should look like this:
@@ -82,26 +82,26 @@ Done, the other line we have to add is the prefix, we go to the line of our code
 ```javascript
 const Discord = require('discord.js');
 
-const Client = new Discord.Client();
+const client = new Discord.Client();
 
 const { Prefix, token }= require("./config.js");
 
-Client.on("ready", () => {
+client.on("ready", () => {
 	console.log("i'm ready")
 });
 
 var prefix = Prefix
 
-Client.on("message", (msg) => {
+client.on("message", (msg) => {
 	if (msg.content.startsWith(prefix + "ping")) {
     msg.channel.send("Pong!");
   }
   if (msg.content.startsWith(prefix + "hi")) {
-    msg.channel.send("Hi" + msg.author);
+    msg.channel.send("Hi <@" + msg.author + ">");
   }
 });
 
-Client.login(token); 
+client.login(token); 
 ```
 
 {% hint style="info" %}
@@ -110,7 +110,7 @@ NOTE: I have created a new "hi" command and the bot will simply answer with a: H
 
  Let's activate the bot again and check the changes with the prefix.
 
-![](../.gitbook/assets/2018-08-01_17-48-21.gif)
+![](../.gitbook/assets/hrgirvuqcr.gif)
 
 {% hint style="success" %}
 Great, the bot answers queries through the prefix created.
@@ -142,20 +142,22 @@ Client.on("ready", () => {
 
 var prefix = Prefix
 
-Client.on("message", (msg) => {
+client.on("message", (msg) => {
 
-   if (!msg.content.startsWith(prefix)) return;
-   if (msg.author.bot) return;
-   
+	if (!msg.content.startsWith(prefix)) return;
+	if (msg.author.bot) return;
+
 	if (msg.content.startsWith(prefix + "ping")) {
-    msg.channel.send("Pong!");
-  }
-  if (msg.content.startsWith(prefix + "hi")) {
-    msg.channel.send("Hi" + msg.author);
-  }
+		 msg.channel.send("Pong!");
+	}
+	
+	if (msg.content.startsWith(prefix + "hi")) {
+		msg.channel.send("Hi <@" + msg.author + ">");
+	}
+	
 });
 
-Client.login(token); 
+client.login(token); 
 ```
 
 {% hint style="success" %}
