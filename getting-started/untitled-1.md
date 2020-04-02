@@ -23,9 +23,9 @@ One of the areas I'm especially proud of in Sublime Text 3 is performance: it's 
 
 ![](../.gitbook/assets/sublime.png)
 
-* Once downloaded, run the Sublime Text Build 3176 x64 Setup.exe installer, this will only take a few minutes.
+* **Once downloaded, run the Sublime Text Build 3211 x64 Setup.exe installer, this will only take a few minutes.**
 
-> Note: I have Sublime Text Build 3176 x64 Setup.exe for the version I downloaded and the bits of my pc
+> Note: I have Sublime Text Build 3211 x64 Setup.exe for the version I downloaded and the bits of my pc
 
 ## Using Sublime Text 3
 
