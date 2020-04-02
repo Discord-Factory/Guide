@@ -12,9 +12,9 @@ description: 'Here is how to code and develop your bot, with a basic and useful 
 
 * Open the bot folder with Sublime Text 3 or the editor you have installed.
 * Create a new file and name it with the.js extension \(JavaScript file\).
-* Examples: logic.js, index.js, app.js, etc.
+* Examples: nextgen.js, index.js, app.js, etc.
 
-![](../.gitbook/assets/2018-07-31_04-53-26.gif)
+![](../.gitbook/assets/d3rqgrxcm9.gif)
 
 Once the file is created, copy and paste the sample code to start a bot:
 
@@ -22,23 +22,23 @@ Once the file is created, copy and paste the sample code to start a bot:
 //list of bookshops 
 const Discord = require("discord.js");
 //We create the client
-const Client = new Discord.Client();
+const client = new Discord.Client();
 //ready event
-Client.on("ready", () => {
+client.on("ready", () => {
    console.log("I'm ready to go!");
 });
 //messageevent
-Client.on("message", (message) => {
+client.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
   }
 });
-Client.login("Your Secret Token Bot");     
+client.login("Your Secret Token Bot");     
 ```
 
 Ok, now replace the line of the "client.login\('Your Secret Token Bot'\)" function with your previously created bot token.
 
-![](../.gitbook/assets/2018-07-31_05-09-53.gif)
+![](../.gitbook/assets/gd8ul4fquq.gif)
 
 And save everything using _\(CONTROL + S\)._
 
@@ -58,9 +58,9 @@ Done, once the code is copied and the token is replaced it is time to activate t
 The way to activate a bot is by windows CMD console
 
 * Open the console and enter the path to the bot folder.
-* Type the following command inside the console: node logic.js \(logic.js is the name of the.js file\).
+* Type the following command inside the console: node nextgen.js \(nextgen.js is the name of the.js file\).
 
-![](../.gitbook/assets/2018-08-01_16-56-01.gif)
+![](../.gitbook/assets/llbx05st43.gif)
 
 Ready you have a bot running now you can create a lot of functions for your bot
 

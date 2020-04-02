@@ -24,7 +24,7 @@ Well, there are two ways to create and use a variable as a prefix:
 * Create a new file inside the bot folder.
 * and give it the name config.js. \(.js is the file extension\)
 
-![](../.gitbook/assets/2018-08-01_17-18-02.gif)
+![](../.gitbook/assets/tvvxwx3pc5.gif)
 
 Now that we have created the configuration file there are 3 things we can add to the file, they are:
 
@@ -36,11 +36,14 @@ Now that we have created the configuration file there are 3 things we can add to
 Copy and paste the following example into the.js configuration file.
 
 ```javascript
-exports.token = "Your Bot Token"
+module.exports = {
 
-exports.Prefix = "/"
+    token: "Your Bot Token",
 
-exports.owner = "Your ID of Discord"
+    Prefix = "/",
+
+    owner = "Your ID of Discord"
+}
 ```
 
 After copying the config code you can change the prefix to which it looks best for the example I will use the symbol "/" as prefix
