@@ -41,7 +41,7 @@ Want a great example? Here's getting the first role that matches one of 4 role n
 
 ```javascript
 const acceptedRoles = ["Mod", "Moderator", "Staff", "Mod Staff"];
-const getModRole = member.roles.find(role => acceptedRoles.includes(role.name));
+const getModRole = member.roles.cache.find(role => acceptedRoles.includes(role.name));
 if(!modRole) return "No role found";
 ```
 
@@ -52,7 +52,7 @@ if(!modRole) return "No role found";
 
 
 ```javascript
-const hasModRole = member.roles.some(role => acceptedRoles.includes(role.name));
+const hasModRole = member.roles.cache.some(role => acceptedRoles.includes(role.name));
 // hasModRole is boolean.
 ```
 
@@ -61,7 +61,7 @@ const hasModRole = member.roles.some(role => acceptedRoles.includes(role.name));
 One great thing you can do with a collection is to grab specific data from it with `map()`, which is useful when listing stuff. `<Collection>.map()` takes a function which returns a string. Its result is an array of all the strings returned by each item. Here's an example: let's get a complete list of all the guilds a bot is in, by name:
 
 ```javascript
-const guildNames = client.guilds.map(g => g.name).join("\n")
+const guildNames = client.guilds.cache.map(g => g.name).join("\n")
 ```
 
 Since `.join()` is an array method, which links all entries together, we get a nice list of all guilds, with a line return between each. Neat!
@@ -69,7 +69,7 @@ Since `.join()` is an array method, which links all entries together, we get a n
 We can also get a most custom string. Let's pretend the `user.tag` property doesn't exist, and we wanted to get all the user\#discrim in our bot. Here's how we'd do it \(using awesome template literals\):
 
 ```javascript
-const tags = client.users.map(u=> `${u.username}#${u.discriminator}`).join(", ");
+const tags = client.users.cache.map(u=> `${u.username}#${u.discriminator}`).join(", ");
 ```
 
 ##  More Data!

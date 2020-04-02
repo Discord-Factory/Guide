@@ -20,10 +20,12 @@ description: In this part I'll teach you how to use events of discord.
 const Discord = require("discord.js");
 const client = new Discord.Client();
 ​
-client.user.setActivity("Online!");
+client.user.setActivity('NextGen Docs', { type: 'WATCHING' });
 ​
 client.login("SuperSecretBotTokenHere");
 ```
+
+![](../.gitbook/assets/discord_cuu0wgm1wo.png)
 
 This code will not work, because the client is not available immediately after it has been initialized. client.user will be indefinite in this case, even if we flip the console.log and login lines. This is because it takes a small amount of time for discord.js to load your servers, users, channels and all that stuff. The more servers the bot has, the longer it takes.
 
@@ -48,7 +50,7 @@ this event is for when a member enters your server you are alerted in a certain 
 client.on("guildMemberAdd", (member) => {
   //variables
   var guild = member.guild
-  var channel = guild.channels.get(c => c.name === 'mod-logs')//Look for the channel in the guild and the send the message.
+  var channel = guild.channels.cache.get(c => c.name === 'mod-logs')//Look for the channel in the guild and the send the message.
   //this are send on the console of the bot
   console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
   //this will send the message to the channel with the name mod-logs
@@ -65,7 +67,7 @@ this event is for when a member leaves your server and is alerted on a specific 
 client.on("guildMemberRemove", (member) => {
   //variables
   var guild = member.guild
-  var channel = guild.channels.get(c => c.name === 'mod-logs')//Look for the channel in the guild and the send the message.
+  var channel = guild.channels.cache.get(c => c.name === 'mod-logs')//Look for the channel in the guild and the send the message.
   //this are send on the console of the bot
   console.log(`User "${member.user.username}" He's gone"${member.guild.name}"` );
   //this will send the message to the channel with the name mod-logs
