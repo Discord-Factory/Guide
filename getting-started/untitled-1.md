@@ -21,7 +21,7 @@ One of the areas I'm especially proud of in Sublime Text 3 is performance: it's 
 * enter the website [Sublime Text](https://www.sublimetext.com/3)
 * Download the version that fits your PC: 
 
-![](../.gitbook/assets/sublime.png)
+![](../.gitbook/assets/msedge_qjg3vg2ssb.png)
 
 * **Once downloaded, run the Sublime Text Build 3211 x64 Setup.exe installer, this will only take a few minutes.**
 
